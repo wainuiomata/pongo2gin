@@ -31,7 +31,8 @@ import (
 func main() {
     router := gin.Default()
 
-    // Use r.Default() for default options or r.New() for custom options
+    // Use pongo2gin.Default() for default options or pongo2gin.New()
+    // if you need to use custom RenderOptions.
     router.HTMLRender = pongo2gin.Default()
 
     router.GET("/", func(c *gin.Context) {
