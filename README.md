@@ -8,7 +8,7 @@ https://github.com/flosch/pongo2
 Usage:
 ------
 
-To use pongo2gin you need to assign router.HTMLRenderer to a new renderer
+To use pongo2gin you need to set your router.HTMLRenderer to a new renderer
 instance, this is done after creating the Gin router when the Gin application
 starts up. You can use pongo2gin.Default() to create a new renderer with
 default options, this assumes templates will be located in the "templates"
@@ -29,17 +29,17 @@ import (
 )
 
 func main() {
-    r := gin.Default()
+    router := gin.Default()
 
     // Use r.Default() for default options or r.New() for custom options
-    r.HTMLRender = pongo2gin.Default()
+    router.HTMLRender = pongo2gin.Default()
 
-    r.GET("/", func(c *gin.Context) {
+    router.GET("/", func(c *gin.Context) {
         // Use pongo2.Context instead of gin.H
         c.HTML(200, "hello.html", pongo2.Context{"name": "world"})
     })
 
-    r.Run(":8080")
+    router.Run(":8080")
 }
 ```
 
