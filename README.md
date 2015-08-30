@@ -5,8 +5,8 @@ Package pongo2gin is a template renderer that can be used with the Gin web
 framework https://github.com/gin-gonic/gin it uses the Pongo2 template library
 https://github.com/flosch/pongo2
 
-Usage:
-------
+Usage
+-----
 
 To use pongo2gin you need to set your router.HTMLRenderer to a new renderer
 instance, this is done after creating the Gin router when the Gin application
@@ -18,8 +18,8 @@ To render templates from a route, call c.HTML just as you would with
 regular Gin templates, the only difference is that you pass template
 data as a pongo2.Context instead of gin.H type.
 
-Basic Example:
---------------
+Basic Example
+-------------
 
 ```go
 import (
@@ -44,8 +44,8 @@ func main() {
 }
 ```
 
-RenderOptions:
---------------
+RenderOptions
+-------------
 
 When calling pongo2gin.New() instead of pongo2gin.Default() you can use these
 custom RenderOptions:
@@ -57,8 +57,8 @@ type RenderOptions struct {
 }
 ```
 
-Template Caching:
------------------
+Template Caching
+----------------
 
 Templates will be cached if the current Gin Mode is set to anything but "debug",
 this means the first time a template is used it will still load from disk, but
@@ -69,7 +69,7 @@ each request.
 
 Caching is implemented by the Pongo2 library itself.
 
-GoDoc:
-------
+GoDoc
+-----
 
 https://godoc.org/github.com/robvdl/pongo2gin
