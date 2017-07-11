@@ -70,14 +70,8 @@ func (p Pongo2Render) Render(w http.ResponseWriter) error {
 // WriteContentType should add the Content-Type header to the response
 // when not set yet.
 func (p Pongo2Render) WriteContentType(w http.ResponseWriter) {
-	writeContentType(w, []string{p.Options.ContentType})
-}
-
-// writeContentType is also in the gin/render package but it has not been made
-// pubic so is repeated here, maybe convince the author to make this public.
-func writeContentType(w http.ResponseWriter, value []string) {
 	header := w.Header()
 	if val := header["Content-Type"]; len(val) == 0 {
-		header["Content-Type"] = value
+		header["Content-Type"] = []string{p.Options.ContentType}
 	}
 }
