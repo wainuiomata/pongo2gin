@@ -62,9 +62,15 @@ func (p Pongo2Render) Instance(name string, data interface{}) render.Render {
 
 // Render should render the template to the response.
 func (p Pongo2Render) Render(w http.ResponseWriter) error {
-	writeContentType(w, []string{p.Options.ContentType})
+	p.WriteContentType(w)
 	err := p.Template.ExecuteWriter(p.Context, w)
 	return err
+}
+
+// WriteContentType should add the Content-Type header to the response
+// when not set yet.
+func (p Pongo2Render) WriteContentType(w http.ResponseWriter) {
+	writeContentType(w, []string{p.Options.ContentType})
 }
 
 // writeContentType is also in the gin/render package but it has not been made
