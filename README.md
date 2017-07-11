@@ -5,6 +5,11 @@ Package pongo2gin is a template renderer that can be used with the Gin web
 framework https://github.com/gin-gonic/gin it uses the Pongo2 template library
 https://github.com/flosch/pongo2
 
+Requirements
+------------
+
+Requires Gin 1.2 or higher and Pongo2.
+
 Usage
 -----
 
