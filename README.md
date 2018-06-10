@@ -30,7 +30,7 @@ Basic Example
 import (
     "github.com/gin-gonic/gin"
     "github.com/flosch/pongo2"
-    "github.com/robvdl/pongo2gin"
+    "gitlab.com/go-box/pongo2gin"
 )
 
 func main() {
@@ -77,4 +77,4 @@ Caching is implemented by the Pongo2 library itself.
 GoDoc
 -----
 
-https://godoc.org/github.com/robvdl/pongo2gin
+https://godoc.org/gitlab.com/go-box/pongo2gin
