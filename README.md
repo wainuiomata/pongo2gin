@@ -5,6 +5,9 @@ Package pongo2gin is a template renderer that can be used with the Gin web
 framework https://github.com/gin-gonic/gin it uses the Pongo2 template library
 https://github.com/flosch/pongo2
 
+This simple binding library is based on a similar library built for using
+Handlebars templates with Gin: https://gitlab.com/go-box/ginraymond.
+
 Requirements
 ------------
 
