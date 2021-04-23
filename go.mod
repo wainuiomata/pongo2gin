@@ -1,4 +1,4 @@
-module pongo2gin
+module gitlab.com/go-box/pongo2gin
 
 go 1.14
 
