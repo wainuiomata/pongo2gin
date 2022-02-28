@@ -51,6 +51,7 @@ func (p Pongo2Render) Instance(name string, data interface{}) render.Render {
 
 	if p.Options.TemplateSet != nil {
 		template = pongo2.Must(p.Options.TemplateSet.FromFile(filename))
+		data.(pongo2.Context).Update(p.Options.TemplateSet.Globals)
 	} else {
 		if gin.Mode() == "debug" {
 			template = pongo2.Must(pongo2.FromFile(filename))
