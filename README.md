@@ -11,7 +11,7 @@ Handlebars templates with Gin: https://gitlab.com/go-box/ginraymond.
 Requirements
 ------------
 
-Requires Gin 1.2 or higher and Pongo2.
+Requires Gin 1.16 or higher and Pongo2.
 
 Usage
 -----
@@ -60,8 +60,9 @@ custom RenderOptions:
 
 ```go
 type RenderOptions struct {
-    TemplateDir string  // location of the template directory
-    ContentType string  // Content-Type header used when calling c.HTML()
+    TemplateDir string              // location of the template directory
+    TemplateSet *pongo2.TemplateSet // pongo2 template set with custom loader, or nil
+    ContentType string              // Content-Type header used when calling c.HTML()
 }
 ```
 
