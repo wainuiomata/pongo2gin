@@ -11,25 +11,7 @@ Handlebars templates with Gin: https://gitlab.com/go-box/ginraymond.
 Requirements
 ------------
 
-Requires Gin 1.16 or higher and Pongo2.
-
-
-## Here is Compatible with pongo version 1 &  version 4
-
- [pongo2 version 5](https://gitlab.com/go-box/pongo2gin/) -  Compatible with pongo version 5
- 
-
- [pongo2 version 1](https://gitlab.com/go-box/pongo2gin/tree/main/v1) - Compatible with pongo version 1
- 
- 
- [pongo2 version 4](https://gitlab.com/go-box/pongo2gin/tree/main/v4) -  Compatible with pongo version 4
-
-
-# please don't forget to give stars :)
-
-## Installation  
-
-`go get "github.com/dieselburner/pongo2gin"`
+Requires Gin 1.2 or higher and Pongo2.
 
 Usage
 -----
@@ -48,47 +30,26 @@ Basic Example
 -------------
 
 ```go
-package main
-
 import (
-	"log"
-	"net/http"
-
-	pongo2gin "github.com/dieselburner/pongo2gin"
-
-	"github.com/flosch/pongo2/v5"
-	"github.com/gin-gonic/gin"
+    "github.com/gin-gonic/gin"
+    "github.com/flosch/pongo2"
+    "gitlab.com/go-box/pongo2gin"
 )
 
-func GetAllData(c *gin.Context) {
-	posts := []string{
-		"Andrejs Cainikovs",
-		"Carlos Slim Helu",
-		"Mark Zuckerberg",
-		"Amancio Ortega ",
-		"Jeff Bezos",
-		" Warren Buffet ",
-		"Bill Gates",
-		"selman tunç",
-	}
-	// Call the HTML method of the Context to render a template
-	c.HTML(http.StatusOK, "index.html",
-		pongo2.Context{
-			"title": "hello pongo",
-			"posts": posts,
-		},
-	)
-}
 func main() {
-	gin.SetMode(gin.DebugMode)
-	r := gin.Default()
-	r.Use(gin.Recovery())
-	r.HTMLRender = pongo2gin.TemplatePath("templates")
-	r.GET("/", GetAllData)
-	log.Fatal(r.Run(":8888"))
+    router := gin.Default()
+
+    // Use pongo2gin.Default() for default options or pongo2gin.New()
+    // if you need to use custom RenderOptions.
+    router.HTMLRender = pongo2gin.Default()
+
+    router.GET("/", func(c *gin.Context) {
+        // Use pongo2.Context instead of gin.H
+        c.HTML(200, "hello.html", pongo2.Context{"name": "world"})
+    })
+
+    router.Run(":8080")
 }
-
-
 ```
 
 RenderOptions
@@ -99,9 +60,8 @@ custom RenderOptions:
 
 ```go
 type RenderOptions struct {
-    TemplateDir string              // location of the template directory
-    TemplateSet *pongo2.TemplateSet // pongo2 template set with custom loader, or nil
-    ContentType string              // Content-Type header used when calling c.HTML()
+    TemplateDir string  // location of the template directory
+    ContentType string  // Content-Type header used when calling c.HTML()
 }
 ```
 
@@ -120,4 +80,4 @@ Caching is implemented by the Pongo2 library itself.
 GoDoc
 -----
 
-https://godoc.org/github.com/dieselburner/pongo2gin
+https://godoc.org/gitlab.com/go-box/pongo2gin

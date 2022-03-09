@@ -23,13 +23,14 @@ Requires Gin 1.16 or higher and Pongo2.
  
  
  [pongo2 version 4](https://gitlab.com/go-box/pongo2gin/tree/main/v4) -  Compatible with pongo version 4
-
+ 
+ 
 
 # please don't forget to give stars :)
 
 ## Installation  
 
-`go get "github.com/dieselburner/pongo2gin"`
+`go get "gitlab.com/go-box/pongo2gin/v1"`
 
 Usage
 -----
@@ -48,18 +49,18 @@ Basic Example
 -------------
 
 ```go
+
 package main
 
 import (
 	"log"
 	"net/http"
-
-	pongo2gin "github.com/dieselburner/pongo2gin"
-
-	"github.com/flosch/pongo2/v5"
+	"gitlab.com/go-box/pongo2gin"
+	"github.com/flosch/pongo2"
 	"github.com/gin-gonic/gin"
 )
 
+//GetAllData all list
 func GetAllData(c *gin.Context) {
 	posts := []string{
 		"Andrejs Cainikovs",
@@ -79,7 +80,9 @@ func GetAllData(c *gin.Context) {
 		},
 	)
 }
+
 func main() {
+
 	gin.SetMode(gin.DebugMode)
 	r := gin.Default()
 	r.Use(gin.Recovery())
@@ -87,7 +90,6 @@ func main() {
 	r.GET("/", GetAllData)
 	log.Fatal(r.Run(":8888"))
 }
-
 
 ```
 
@@ -120,4 +122,4 @@ Caching is implemented by the Pongo2 library itself.
 GoDoc
 -----
 
-https://godoc.org/github.com/dieselburner/pongo2gin
+https://godoc.org/gitlab.com/go-box/pongo2gin

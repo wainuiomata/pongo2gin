@@ -29,7 +29,7 @@ Requires Gin 1.16 or higher and Pongo2.
 
 ## Installation  
 
-`go get "github.com/dieselburner/pongo2gin"`
+`go get "gitlab.com/go-box/pongo2gin/v4"`
 
 Usage
 -----
@@ -54,9 +54,9 @@ import (
 	"log"
 	"net/http"
 
-	pongo2gin "github.com/dieselburner/pongo2gin"
+	pongo2gin "gitlab.com/go-box/pongo2gin/v4"
 
-	"github.com/flosch/pongo2/v5"
+	"github.com/flosch/pongo2/v4"
 	"github.com/gin-gonic/gin"
 )
 
@@ -120,4 +120,4 @@ Caching is implemented by the Pongo2 library itself.
 GoDoc
 -----
 
-https://godoc.org/github.com/dieselburner/pongo2gin
+https://godoc.org/gitlab.com/go-box/pongo2gin
