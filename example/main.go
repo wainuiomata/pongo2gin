@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/flosch/pongo2"
+	"github.com/flosch/pongo2/v5"
 	"github.com/gin-gonic/gin"
 
 	"gitlab.com/go-box/pongo2gin"
