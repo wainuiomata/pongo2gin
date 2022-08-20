@@ -4,6 +4,9 @@
 *.so
 *.dylib
 
+# Compiled examples shouldn't end up in git
+**/example/example
+
 # Test binary, build with `go test -c`
 *.test
 
@@ -22,5 +25,4 @@ src/github.com/*
 src/golang.org/
 src/gopkg.in/
 config.yml
-example/.DS_Store
-.DS_Store
+**/.DS_Store

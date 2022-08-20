@@ -4,10 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/flosch/pongo2"
+	"github.com/flosch/pongo2/v4"
 	"github.com/gin-gonic/gin"
 
-	pongo2gin "gitlab.com/go-box/pongo2gin/v4"
+	"gitlab.com/go-box/pongo2gin/v4"
 )
 
 // GetAllData returns all posts
