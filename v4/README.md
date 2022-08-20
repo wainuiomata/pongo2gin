@@ -27,9 +27,9 @@ Requires Gin 1.16 or higher and Pongo2.
 
 # please don't forget to give stars :)
 
-## Installation
+## Installation  
 
-`go get "gitlab.com/go-box/pongo2gin"`
+`go get "gitlab.com/go-box/pongo2gin/v4"`
 
 Usage
 -----
@@ -54,9 +54,9 @@ import (
 	"log"
 	"net/http"
 
-	pongo2gin "gitlab.com/go-box/pongo2gin"
+	pongo2gin "gitlab.com/go-box/pongo2gin/v4"
 
-	"github.com/flosch/pongo2/v5"
+	"github.com/flosch/pongo2/v4"
 	"github.com/gin-gonic/gin"
 )
 
