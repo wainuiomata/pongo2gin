@@ -11,7 +11,7 @@ Handlebars templates with Gin: https://gitlab.com/go-box/ginraymond.
 Requirements
 ------------
 
-Requires Gin 1.16 or higher and Pongo2 version 5.
+Requires Gin 1.16 or higher and Pongo2 version 4.
 
 ## Here are versions compatible with other versions of Pongo2
 
@@ -21,9 +21,9 @@ Requires Gin 1.16 or higher and Pongo2 version 5.
 
 # Please don't forget to give stars :)
 
-## Installation
+## Installation  
 
-`go get "gitlab.com/go-box/pongo2gin"`
+`go get "gitlab.com/go-box/pongo2gin/v4"`
 
 Usage
 -----
@@ -45,14 +45,13 @@ Basic Example
 package main
 
 import (
-import (
 	"log"
 	"net/http"
 
-	"github.com/flosch/pongo2"
+	"github.com/flosch/pongo2/v4"
 	"github.com/gin-gonic/gin"
 
-	"gitlab.com/go-box/pongo2gin"
+	"gitlab.com/go-box/pongo2gin/v4"
 )
 
 // GetAllData returns all posts
@@ -80,7 +79,6 @@ func main() {
 	r.GET("/", GetAllData)
 	log.Fatal(r.Run(":8888"))
 }
-
 ```
 
 RenderOptions
