@@ -102,7 +102,7 @@ Templates will be cached if the current Gin Mode is set to anything but "debug",
 this means the first time a template is used it will still load from disk, but
 after that the cached template will be used from memory instead.
 
-If he Gin Mode is set to "debug" then templates will be loaded from disk on
+If the Gin Mode is set to "debug" then templates will be loaded from disk on
 each request.
 
 Caching is implemented by the Pongo2 library itself.
