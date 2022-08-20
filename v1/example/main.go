@@ -6,21 +6,18 @@ import (
 
 	"github.com/flosch/pongo2"
 	"github.com/gin-gonic/gin"
-	"github.com/stnc/myPongoGinRender"
+
+	pongo2gin "gitlab.com/go-box/pongo2gin/v1"
 )
 
-//GetAllData all list
+// GetAllData returns all posts
 func GetAllData(c *gin.Context) {
 	posts := []string{
-		"Larry Ellison",
-		"Carlos Slim Helu",
-		"Mark Zuckerberg",
-		"Amancio Ortega ",
-		"Jeff Bezos",
-		" Warren Buffet ",
-		"Bill Gates",
-		"selman tunç",
+		"Rob van der Linde",
+		"John Curley",
+		"Andrejs Cainikovs",
 	}
+
 	// Call the HTML method of the Context to render a template
 	c.HTML(http.StatusOK, "index.html",
 		pongo2.Context{
@@ -31,11 +28,10 @@ func GetAllData(c *gin.Context) {
 }
 
 func main() {
-
 	gin.SetMode(gin.DebugMode)
 	r := gin.Default()
 	r.Use(gin.Recovery())
-	r.HTMLRender = myPongoGinRender.TemplatePath("templates")
+	r.HTMLRender = pongo2gin.Default()
 	r.GET("/", GetAllData)
 	log.Fatal(r.Run(":8888"))
 }

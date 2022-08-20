@@ -14,13 +14,6 @@ type PongoRender struct {
 	TmplDir string
 }
 
-// TemplatePath html files path
-func TemplatePath(tmplDir string) *PongoRender {
-	return &PongoRender{
-		TmplDir: tmplDir,
-	}
-}
-
 // Instance init
 func (p *PongoRender) Instance(name string, data interface{}) render.Render {
 	var template *pongo2.Template

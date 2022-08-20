@@ -23,9 +23,9 @@ Requires Gin 1.16 or higher and Pongo2 version 5.
 
 # Please don't forget to give stars :)
 
-## Installation  
+## Installation
 
-`go get "github.com/dieselburner/pongo2gin"`
+`go get "gitlab.com/go-box/pongo2gin"`
 
 Usage
 -----
@@ -47,26 +47,24 @@ Basic Example
 package main
 
 import (
+import (
 	"log"
 	"net/http"
 
-	pongo2gin "github.com/dieselburner/pongo2gin"
-
-	"github.com/flosch/pongo2/v5"
+	"github.com/flosch/pongo2"
 	"github.com/gin-gonic/gin"
+
+	"gitlab.com/go-box/pongo2gin"
 )
 
+// GetAllData returns all posts
 func GetAllData(c *gin.Context) {
 	posts := []string{
+		"Rob van der Linde",
+		"John Curley",
 		"Andrejs Cainikovs",
-		"Carlos Slim Helu",
-		"Mark Zuckerberg",
-		"Amancio Ortega ",
-		"Jeff Bezos",
-		" Warren Buffet ",
-		"Bill Gates",
-		"selman tunç",
 	}
+
 	// Call the HTML method of the Context to render a template
 	c.HTML(http.StatusOK, "index.html",
 		pongo2.Context{
@@ -75,15 +73,15 @@ func GetAllData(c *gin.Context) {
 		},
 	)
 }
+
 func main() {
 	gin.SetMode(gin.DebugMode)
 	r := gin.Default()
 	r.Use(gin.Recovery())
-	r.HTMLRender = pongo2gin.TemplatePath("templates")
+	r.HTMLRender = pongo2gin.Default()
 	r.GET("/", GetAllData)
 	log.Fatal(r.Run(":8888"))
 }
-
 
 ```
 
@@ -116,4 +114,4 @@ Caching is implemented by the Pongo2 library itself.
 GoDoc
 -----
 
-https://godoc.org/github.com/dieselburner/pongo2gin
+https://godoc.org/gitlab.com/go-box/pongo2gin
