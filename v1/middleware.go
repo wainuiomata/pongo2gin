@@ -9,19 +9,19 @@ import (
 	"github.com/gin-gonic/gin/render"
 )
 
-//PongoRender struct init
+// PongoRender struct init
 type PongoRender struct {
 	TmplDir string
 }
 
-//TemplatePath html files path
+// TemplatePath html files path
 func TemplatePath(tmplDir string) *PongoRender {
 	return &PongoRender{
 		TmplDir: tmplDir,
 	}
 }
 
-//Instance init
+// Instance init
 func (p *PongoRender) Instance(name string, data interface{}) render.Render {
 	var template *pongo2.Template
 	fileName := path.Join(p.TmplDir, name)
@@ -39,20 +39,20 @@ func (p *PongoRender) Instance(name string, data interface{}) render.Render {
 	}
 }
 
-//PongoHTML strcut
+// PongoHTML struct
 type PongoHTML struct {
 	Template *pongo2.Template
 	Name     string
 	Data     pongo2.Context
 }
 
-//Render for gin interface  render override
+// Render for gin interface  render override
 func (p *PongoHTML) Render(w http.ResponseWriter) error {
 	p.WriteContentType(w)
 	return p.Template.ExecuteWriter(p.Data, w)
 }
 
-//WriteContentType  for gin interface  WriteContentType override
+// WriteContentType for gin interface WriteContentType override
 func (p *PongoHTML) WriteContentType(w http.ResponseWriter) {
 	header := w.Header()
 	if val := header["Content-Type"]; len(val) == 0 {
