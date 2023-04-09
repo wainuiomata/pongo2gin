@@ -11,7 +11,7 @@ Handlebars templates with Gin: https://gitlab.com/go-box/ginraymond.
 Requirements
 ------------
 
-Requires Gin 1.16 or higher and Pongo2 version 5.
+Requires Gin 1.9 or higher and Pongo2 version 5.
 
 ## Here are versions compatible with other versions of Pongo2
 

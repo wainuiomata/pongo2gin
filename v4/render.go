@@ -5,7 +5,6 @@ package pongo2gin
 
 import (
 	"net/http"
-	"path"
 
 	"github.com/flosch/pongo2/v4"
 	"github.com/gin-gonic/gin"
@@ -28,6 +27,15 @@ type Pongo2Render struct {
 
 // New creates a new Pongo2Render instance with custom Options.
 func New(options RenderOptions) *Pongo2Render {
+	// If TemplateSet is nil, rather than using pongo2.DefaultSet,
+	// construct a new TemplateSet with the correct base directory.
+	// This avoids the need to call pongo2.DefaultLoader.SetBaseDir,
+	// and is necessary to support multiple Pongo2Render instances.
+	if options.TemplateSet == nil {
+		loader := pongo2.MustNewLocalFileSystemLoader(options.TemplateDir)
+		options.TemplateSet = pongo2.NewSet(options.TemplateDir, loader)
+	}
+
 	return &Pongo2Render{
 		Options: &options,
 	}
@@ -47,18 +55,16 @@ func Default() *Pongo2Render {
 func (p Pongo2Render) Instance(name string, data interface{}) render.Render {
 	var template *pongo2.Template
 
-	filename := path.Join(p.Options.TemplateDir, name)
-
-	if p.Options.TemplateSet != nil {
-		template = pongo2.Must(p.Options.TemplateSet.FromFile(filename))
-		data.(pongo2.Context).Update(p.Options.TemplateSet.Globals)
+	// Use template cache in Production mode.
+	// In Debug mode load the file from disk each time.
+	if gin.Mode() == "debug" {
+		template = pongo2.Must(p.Options.TemplateSet.FromFile(name))
 	} else {
-		if gin.Mode() == "debug" {
-			template = pongo2.Must(pongo2.FromFile(filename))
-		} else {
-			template = pongo2.Must(pongo2.FromCache(filename))
-		}
+		template = pongo2.Must(p.Options.TemplateSet.FromCache(name))
 	}
+
+	// This could be modifying the original data, need to check this.
+	data.(pongo2.Context).Update(p.Options.TemplateSet.Globals)
 
 	return Pongo2Render{
 		Template: template,
