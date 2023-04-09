@@ -63,9 +63,6 @@ func (p Pongo2Render) Instance(name string, data interface{}) render.Render {
 		template = pongo2.Must(p.Options.TemplateSet.FromCache(name))
 	}
 
-	// This could be modifying the original data, need to check this.
-	data.(pongo2.Context).Update(p.Options.TemplateSet.Globals)
-
 	return Pongo2Render{
 		Template: template,
 		Context:  data.(pongo2.Context),
