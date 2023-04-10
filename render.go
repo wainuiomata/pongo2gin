@@ -34,6 +34,7 @@ func New(options RenderOptions) *Pongo2Render {
 	if options.TemplateSet == nil {
 		loader := pongo2.MustNewLocalFileSystemLoader(options.TemplateDir)
 		options.TemplateSet = pongo2.NewSet(options.TemplateDir, loader)
+		options.TemplateSet.Debug = gin.Mode() == "debug"
 	}
 
 	return &Pongo2Render{
@@ -53,18 +54,10 @@ func Default() *Pongo2Render {
 // Instance should return a new Pongo2Render struct per request and prepare
 // the template by either loading it from disk or using pongo2's cache.
 func (p Pongo2Render) Instance(name string, data interface{}) render.Render {
-	var template *pongo2.Template
-
-	// Use template cache in Production mode.
-	// In Debug mode load the file from disk each time.
-	if gin.Mode() == "debug" {
-		template = pongo2.Must(p.Options.TemplateSet.FromFile(name))
-	} else {
-		template = pongo2.Must(p.Options.TemplateSet.FromCache(name))
-	}
-
+	// TemplateSet.FromCache will only cache templates if TemplateSet.Debug = true
+	// This is populated from gin.Mode() in the constructor, see: New
 	return Pongo2Render{
-		Template: template,
+		Template: pongo2.Must(p.Options.TemplateSet.FromCache(name)),
 		Context:  data.(pongo2.Context),
 		Options:  p.Options,
 	}

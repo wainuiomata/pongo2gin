@@ -28,7 +28,6 @@ func GetAllData(c *gin.Context) {
 }
 
 func main() {
-	gin.SetMode(gin.DebugMode)
 	r := gin.Default()
 	r.Use(gin.Recovery())
 	r.HTMLRender = pongo2gin.Default()
