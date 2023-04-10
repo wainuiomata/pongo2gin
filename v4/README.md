@@ -13,14 +13,6 @@ Requirements
 
 Requires Gin 1.9 or higher and Pongo2 version 4.
 
-## Here are versions compatible with other versions of Pongo2
-
- [pongo2 version 5](https://gitlab.com/go-box/pongo2gin/) - Compatible with pongo2 version 5
- 
- [pongo2 version 4](https://gitlab.com/go-box/pongo2gin/tree/main/v4) - Compatible with pongo2 version 4
-
-# Please don't forget to give stars :)
-
 ## Installation  
 
 `go get "gitlab.com/go-box/pongo2gin/v4"`
