@@ -1,12 +1,5 @@
 # Changelog
 
-## v6.0.0 - unreleased
-
-- Support for Pongo2 v6
-- Move v5 code to directory
-
-# Changelog
-
 ## v5.0.1
 
 - Previous release had a broken go.mod file and git history had to be fixed (was stuck at v1.3.0)

@@ -6,7 +6,7 @@ package pongo2gin
 import (
 	"net/http"
 
-	"github.com/flosch/pongo2/v6"
+	"github.com/flosch/pongo2/v5"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/render"
 )
