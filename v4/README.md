@@ -15,7 +15,7 @@ Requires Go 1.18 or higher, Gin and Pongo2 version 4.
 
 ## Installation
 
-`go get "gitlab.com/go-box/pongo2gin/v4"`
+`go get gitlab.com/go-box/pongo2gin/v4`
 
 Usage
 -----
