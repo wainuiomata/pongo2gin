@@ -1,0 +1,16 @@
+# Changelog
+
+## v5.0.1
+
+- Drop v4 directory as different versions should done with a git tag
+- Drop example directory which had a messy and old Bootstrap template
+- Only maintain one simple example in the README.md rather than two
+- Bugfix: When a TemplateSet was used it would alter data in Pongo2Render.Instance (#10, #11)
+- BugFix: When a TemplateSet was used it would not respect gin.Debug (#10)
+- Simplify code to always use a TemplateSet creating one from the TemplateDir if needed (#10)
+- Simplify set TemplateSet.Debug based on gin.Mode() and always use TemplateSet.FromCache (#12)
+- Add tests for current functionality
+- Add a .editorconfig file
+- Add a CHANGELOG
+
+Thanks to all contributors and reviewers.
