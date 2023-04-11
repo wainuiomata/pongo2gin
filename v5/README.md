@@ -57,7 +57,6 @@ func main() {
 	})
 	log.Fatal(r.Run(":8888"))
 }
-
 ```
 
 RenderOptions
