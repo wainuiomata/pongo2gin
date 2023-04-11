@@ -1,8 +1,8 @@
 # Changelog
 
-## v5.0.1 - unreleased
+## v5.0.1
 
-- Drop v4 directory as different versions should done with a git tag
+- Previous release had a broken go.mod file and git history had to be fixed (was stuck at v1.3.0)
 - Drop example directory which had a messy and old Bootstrap template
 - Only maintain one simple example in the README.md rather than two
 - Bugfix: When a TemplateSet was used it would alter data in Pongo2Render.Instance (#10, #11)
