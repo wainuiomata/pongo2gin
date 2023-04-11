@@ -13,4 +13,18 @@
 - Add a .editorconfig file
 - Add a CHANGELOG
 
-Thanks to all contributors and reviewers.
+Thanks to all contributors.
+
+## v5.0.0
+
+- This was a failed release, do not use.
+
+Thanks to all contributors.
+
+## v4.0.0
+
+- Backport release - v4.0.0 was never an official release tag
+- Had to fix up git history editing 2 commits because go mod was stuck at v1.3.0
+- The reason go mod got stuck was that historical commits had the wrong module name
+
+Thanks to all contributors.

@@ -1,0 +1,9 @@
+# Changelog
+
+## v4.0.0
+
+- Backport release - v4.0.0 was never an official release tag
+- Had to fix up git history editing 2 commits because go mod was stuck at v1.3.0
+- The reason go mod got stuck was that historical commits had the wrong module name
+
+Thanks to all contributors.

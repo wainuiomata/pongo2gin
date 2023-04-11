@@ -11,11 +11,11 @@ Handlebars templates with Gin: https://gitlab.com/go-box/ginraymond.
 Requirements
 ------------
 
-Requires Go 1.18 or higher, Gin and Pongo2 version 5.
+Requires Go 1.18 or higher, Gin and Pongo2 version 4.
 
 ## Installation
 
-`go get "gitlab.com/go-box/pongo2gin/v5"`
+`go get "gitlab.com/go-box/pongo2gin/v4"`
 
 Usage
 -----
@@ -40,10 +40,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/flosch/pongo2/v5"
+	"github.com/flosch/pongo2/v4"
 	"github.com/gin-gonic/gin"
 
-	"gitlab.com/go-box/pongo2gin/v5"
+	"gitlab.com/go-box/pongo2gin/v4"
 )
 
 func main() {
