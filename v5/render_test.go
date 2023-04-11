@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/flosch/pongo2/v6"
+	"github.com/flosch/pongo2/v5"
 	"github.com/gin-gonic/gin"
 )
 

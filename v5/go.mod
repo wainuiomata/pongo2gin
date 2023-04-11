@@ -1,9 +1,9 @@
-module gitlab.com/go-box/pongo2gin/v6
+module gitlab.com/go-box/pongo2gin/v5
 
 go 1.18
 
 require (
-	github.com/flosch/pongo2/v6 v6.0.0
+	github.com/flosch/pongo2/v5 v5.0.0
 	github.com/gin-gonic/gin v1.9.0
 )
 
