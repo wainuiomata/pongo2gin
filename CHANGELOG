@@ -1,5 +1,9 @@
 # Changelog
 
+## v6.0.1
+
+- Upgrade to Gin 1.9.1 to fix CVE GO-2023-1737
+
 ## v6.0.0
 
 - Support for Pongo2 v6
