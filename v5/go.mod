@@ -1,6 +1,6 @@
 module gitlab.com/go-box/pongo2gin/v5
 
-go 1.18
+go 1.20
 
 require (
 	github.com/flosch/pongo2/v5 v5.0.0
