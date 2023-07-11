@@ -1,8 +1,16 @@
 # Changelog
 
+## v6.0.2
+
+- Added Gitlab CI pipeline for linting and tests (#14)
+
+Thanks to all contributors.
+
 ## v6.0.1
 
 - Upgrade to Gin 1.9.1 to fix CVE GO-2023-1737
+
+Thanks to all contributors.
 
 ## v6.0.0
 
