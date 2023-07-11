@@ -16,7 +16,7 @@ golangci-lint:
 sast:
   stage: lint
 
-test:
+test:current:
   stage: test
   script:
     - CGO_ENABLED=0 go test -coverprofile=coverage-report.out
@@ -25,5 +25,33 @@ test:
   artifacts:
     paths:
       - coverage-report.html
+    expire_in: 7 days
+  coverage: "/\\(statements\\)\\s+\\d+.?\\d+%/"
+
+test:v5:
+  stage: test
+  before_script:
+    - cd v5
+  script:
+    - CGO_ENABLED=0 go test -coverprofile=coverage-report.out
+    - go tool cover -html=coverage-report.out -o=coverage-report.html
+    - go tool cover -func=coverage-report.out
+  artifacts:
+    paths:
+      - v5/coverage-report.html
+    expire_in: 7 days
+  coverage: "/\\(statements\\)\\s+\\d+.?\\d+%/"
+
+test:v4:
+  stage: test
+  before_script:
+    - cd v4
+  script:
+    - CGO_ENABLED=0 go test -coverprofile=coverage-report.out
+    - go tool cover -html=coverage-report.out -o=coverage-report.html
+    - go tool cover -func=coverage-report.out
+  artifacts:
+    paths:
+      - v4/coverage-report.html
     expire_in: 7 days
   coverage: "/\\(statements\\)\\s+\\d+.?\\d+%/"
