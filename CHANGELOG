@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.4
+
+- Upgrade dependencies, in particular golang.org/x/net/html to fix CVE GO-2023-2102
+
+Thanks to all contributors.
+
 ## v6.0.3
 
 - Upgrade dependencies, in particular golang.org/x/net/html to fix CVE GO-2023-1988
