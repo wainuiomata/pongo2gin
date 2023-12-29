@@ -16,9 +16,11 @@ golangci-lint:
 
 sast:
   stage: security
+  needs: []
 
 test:current:
   stage: test
+  needs: []
   before_script:
     - go get github.com/boumenot/gocover-cobertura
     - go install gotest.tools/gotestsum@latest
@@ -42,6 +44,7 @@ test:current:
 
 test:v5:
   stage: test
+  needs: []
   before_script:
     - cd v5
     - go get github.com/boumenot/gocover-cobertura
@@ -66,6 +69,7 @@ test:v5:
 
 test:v4:
   stage: test
+  needs: []
   before_script:
     - cd v4
   script:
