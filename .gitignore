@@ -4,25 +4,12 @@
 *.so
 *.dylib
 
-# Compiled examples shouldn't end up in git
-**/example/example
+# Testing and coverage
+coverage.txt
+coverage.xml
+coverage-report.html
+junit.xml
 
-# Test binary, build with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
-.glide/
-emma
-src
-pkg/
-bin/
-dummy/
+# Editors and tools
+.idea/
 .vscode/
-src/github.com/*
-src/golang.org/
-src/gopkg.in/
-config.yml
-**/.DS_Store
