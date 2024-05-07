@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.7
+
+- Upgrade dependencies, fixes GO-2024-2611 and GO-2024-2687
+
+Thanks to all contributors.
+
 ## v6.0.6
 
 - Upgrade dependencies, Gitlab CI also has junit report now
