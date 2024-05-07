@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.8
+
+- Fix go report card links were broken in README
+
+Thanks to all contributors.
+
 ## v6.0.7
 
 - Upgrade dependencies, fixes GO-2024-2611 and GO-2024-2687
