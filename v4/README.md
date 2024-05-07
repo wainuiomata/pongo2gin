@@ -1,6 +1,8 @@
 Pongo2gin
 =========
 
+[![Go Report Card](https://goreportcard.com/badge/gitlab.com/go-box/pongo2gin/v4)](goreportcard.com/badge/gitlab.com/go-box/pongo2gin/v4)
+
 Package pongo2gin is a template renderer that can be used with the Gin web
 framework https://github.com/gin-gonic/gin it uses the Pongo2 template library
 https://github.com/flosch/pongo2
