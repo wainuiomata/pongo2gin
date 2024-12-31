@@ -1,6 +1,6 @@
 module gitlab.com/go-box/pongo2gin/v4
 
-go 1.21.0
+go 1.22
 
 toolchain go1.22.2
 
