@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.13
+
+- Update quic-go to fix header expansion DoS issue
+
+Thanks to all contributors.
+
 ## v6.0.12
 
 - Update dependencies, updating to Gin 1.11.0
